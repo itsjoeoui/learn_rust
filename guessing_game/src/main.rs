@@ -1,11 +1,15 @@
-use rand::Rng;
+use rand::{thread_rng, Rng};
 use std::io; // io comes from std
+             // we need this to get user input and output
 
 fn main() {
     // entry point into the program
     println!("Hello, world!");
 
-    let secret_number = rand::thread_rng().gen_range(1..=100);
+    // https://doc.rust-lang.org/reference/expressions/range-expr.html
+    // 1..=100 is a range expression, =100 means inclusive
+
+    let secret_number = thread_rng().gen_range(1..=100);
     println!("The random number is {secret_number}");
 
     loop {
