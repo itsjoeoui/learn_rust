@@ -1,4 +1,5 @@
 use rand::{thread_rng, Rng};
+use std::cmp::Ordering;
 use std::io; // io comes from std
              // we need this to get user input and output
 
@@ -46,12 +47,12 @@ fn main() {
         println!("You guessed: {guess}"); // {} defines a placeholder
 
         match guess.cmp(&secret_number) {
-            std::cmp::Ordering::Less => println!("Too small!"),
-            std::cmp::Ordering::Equal => {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Equal => {
                 println!("You win!");
                 break;
             }
-            std::cmp::Ordering::Greater => println!("Too big!"),
+            Ordering::Greater => println!("Too big!"),
         }
     }
 }
